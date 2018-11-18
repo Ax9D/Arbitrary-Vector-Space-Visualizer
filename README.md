@@ -1,4 +1,6 @@
 # Field-and-Particle-Simulation
+![Preview](./demo/example.png)
+
 
 Basic Mass/Charge Particle simulation written in JS using p5.js for rendering, with fully programmable fields (using lambdas).
 The lambda should take a position and define the field at that position (by returning a vector object).
