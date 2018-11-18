@@ -22,6 +22,13 @@ function setup() {
     var uniformTVField = new Field(function (pos) { return new Vector(pos.x>=400?0.001:0,0); });
     var xsqrField = new Field(function (pos) { return new Vector(pos.x, pos.y**2).scalarMult(0.0001); });
     
+    var inwardsField=new Field(function (pos){
+        let central=new Vector(400,300).sub(pos);
+        return central.getUnit().scalarMult(0.1);
+    }
+                                                
+    );
+    
     createCanvas(800, 600);
     //generate particles at random locations
    /*
@@ -30,12 +37,12 @@ function setup() {
         let y = Math.floor(Math.random() * 600);
         let r = 30;
         let mass=50;
-        mass=/*Math.random()*mass+10;
+        mass=Math.random()*mass+10;
         tM+=mass;
         particles.push(new Particle(mass, new Vector(x, y), r));
     }
     */
-    
+   // fields.push(inwardsField);
     //particles.push(new Particle(50,new Vector(100,100),30));
     //fields.push(uniformField);
     //fields.push(customField);
@@ -43,7 +50,7 @@ function setup() {
     //fields.push(customField);
     //fields.push(xsqrField);
     
-    exampleSituation();
+   exampleSituation();
 
 }
 function exampleSituation()
@@ -60,10 +67,10 @@ function exampleSituation()
        
        
     
-    
     particles.push(new Particle(10,new Vector(0,500),30));
     particles.push(new Particle(5,new Vector(200,200),30));
     particles.push(new Particle(1,new Vector(500,100),30));
+    tM=16; //10 + 5 + 1
     particles[0].vel.x=2;
     particles[1].vel=new Vector(1,1).scalarMult(2);
     particles[2].vel=new Vector(-1,1).scalarMult(10);

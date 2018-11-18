@@ -8,6 +8,10 @@ class Vector {
     add(v2) {
         return new Vector(this.x + v2.x, this.y + v2.y);
     }
+    sub(v2)
+    {
+        return new Vector(this.x-v2.x,this.y-v2.y);
+    }
     dist(v2) {
         return this.add(v2.negate()).getMag();
     }
@@ -19,17 +23,19 @@ class Vector {
         return res;
     }
     scalarDiv(k) {
-        return this.scalarOperate(function (val) {
+        /*return this.scalarOperate(function (val) {
             return val / k;
         }
-        );
+        );*/
+        return new Vector(this.x/k,this.y/k);
     }
     scalarMult(k) {
-        return this.scalarOperate(function (val) {
+        /*return this.scalarOperate(function (val) {
             return val * k;
         }
 
-        );
+        );*/
+        return new Vector(this.x*k,this.y*k);
     }
     negate() {
         return this.scalarMult(-1);
