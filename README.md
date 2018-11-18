@@ -4,7 +4,7 @@ Basic Mass/Charge Particle simulation written in JS using p5.js for rendering, w
 The lambda should take a position and define the field at that position (by returning a vector object).
 E.g.
 
-```
+```javascript
 var f=new Field(function(pos)
 	{
 			if(pos.x<=100)
