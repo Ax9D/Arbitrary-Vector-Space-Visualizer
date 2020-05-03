@@ -1,4 +1,4 @@
-# Field-and-Particle-Simulation
+# Arbitrary-Vector-Space-Visualizer
 ![Preview](./demo/example.png)
 
 
